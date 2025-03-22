@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "../assets/App.css";
 import AboutMe from "./about_me";
-import Tool1 from "./tool_1";
-import Tool2 from "./tool_2";
+import BinaryConverter from "./binary_converter";
 import Skills from "./skills";
 import Contact from "./contact";
 import styled from "styled-components";
@@ -13,9 +12,8 @@ export default function App() {
   return (
     <>
       <MainContainer>
-        <AboutMe />
-        <Tool1 />
-        <Tool2 />
+        {/* <AboutMe /> */}
+        <BinaryConverter />
         <Skills />
         <Contact />
       </MainContainer>
@@ -40,8 +38,9 @@ export default function App() {
 }
 
 const MainContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 15px);
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 `;
