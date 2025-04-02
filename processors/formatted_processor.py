@@ -2,8 +2,8 @@ from processors.field_processor import FieldProcessor
 
 
 class FormattedProcessor(FieldProcessor):
-    def __init__(self, field_list, delimiter_config):
-        super().__init__(field_list)
+    def __init__(self, formatter, delimiter_config):
+        super().__init__(formatter)  # Pass formatter instead of field_list
         self._delimiter_config = delimiter_config
 
     @property
@@ -64,7 +64,7 @@ class FormattedProcessor(FieldProcessor):
 
     def process_field_by_index(self, index):
         """Process a field by its index and apply formatting"""
-        field = self.field_list.get_field(index)
+        field = self.formatter.get_field(index)  # Use formatter instead of field_list
         result = super().process_field_by_index(index)
 
         if field.prefix is None and field.suffix is None:
@@ -76,3 +76,7 @@ class FormattedProcessor(FieldProcessor):
             else result
         )
         return f"{field.prefix}{formatted_result}{field.suffix}"
+
+    def process_all_fields(self):
+        """Process all fields in the formatter"""
+        return [self.process_field_by_index(i) for i in range(self.formatter.count)]

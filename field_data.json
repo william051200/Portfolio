@@ -1,74 +1,146 @@
 [
   {
-    "path": ["get_result"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
+    "id": 1,
+    "name": "Formatter One",
+    "field_data": [
+      {
+        "path": ["get_result"],
+        "prefix": "A",
+        "suffix": "B",
+        "simplified": true
+      },
+      {
+        "path": ["get_count"],
+        "prefix": "C",
+        "suffix": "D",
+        "simplified": false
+      },
+      {
+        "path": ["class_b", "get_number"],
+        "prefix": "E",
+        "suffix": "F",
+        "simplified": true
+      },
+      {
+        "path": ["class_b", "class_c"],
+        "prefix": "",
+        "suffix": "",
+        "simplified": false
+      },
+      {
+        "path": ["class_b", "class_d"],
+        "prefix": "G",
+        "suffix": "H",
+        "simplified": true
+      }
+    ]
   },
   {
-    "path": ["get_count"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
+    "id": 2,
+    "name": "Formatter Two",
+    "field_data": [
+      {
+        "path": ["get_result"],
+        "prefix": "I",
+        "suffix": "J",
+        "simplified": false
+      },
+      {
+        "path": ["get_count"],
+        "prefix": "K",
+        "suffix": "L",
+        "simplified": true
+      },
+      {
+        "path": ["class_b", "get_number"],
+        "prefix": "M",
+        "suffix": "N",
+        "simplified": false
+      },
+      {
+        "path": ["class_b", "class_c"],
+        "prefix": "",
+        "suffix": "",
+        "simplified": true
+      },
+      {
+        "path": ["class_b", "class_d"],
+        "prefix": "O",
+        "suffix": "P",
+        "simplified": false
+      }
+    ]
   },
   {
-    "path": ["class_b", "get_number"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
+    "id": 3,
+    "name": "Formatter Three",
+    "field_data": [
+      {
+        "path": ["get_result"],
+        "prefix": "Q",
+        "suffix": "R",
+        "simplified": true
+      },
+      {
+        "path": ["get_count"],
+        "prefix": "S",
+        "suffix": "T",
+        "simplified": false
+      },
+      {
+        "path": ["class_b", "get_number"],
+        "prefix": "U",
+        "suffix": "V",
+        "simplified": true
+      },
+      {
+        "path": ["class_b", "class_c"],
+        "prefix": "",
+        "suffix": "",
+        "simplified": false
+      },
+      {
+        "path": ["class_b", "class_d"],
+        "prefix": "W",
+        "suffix": "X",
+        "simplified": true
+      }
+    ]
   },
   {
-    "path": ["class_b", "class_c"],
-    "prefix": "",
-    "suffix": "",
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_c"],
-    "prefix": "",
-    "suffix": "",
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_c"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_c"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_c", "get_number"],
-    "prefix": null,
-    "suffix": null,
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_c", "get_number"],
-    "prefix": null,
-    "suffix": null,
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_d"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
-  },
-  {
-    "path": ["class_b", "class_d", "get_array"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
-  },
-  {
-    "path": ["class_b"],
-    "prefix": "A",
-    "suffix": "B",
-    "simplified": true
+    "id": 4,
+    "name": "Formatter Four",
+    "field_data": [
+      {
+        "path": ["get_result"],
+        "prefix": "Y",
+        "suffix": "Z",
+        "simplified": false
+      },
+      {
+        "path": ["get_count"],
+        "prefix": "AA",
+        "suffix": "BB",
+        "simplified": true
+      },
+      {
+        "path": ["class_b", "get_number"],
+        "prefix": "CC",
+        "suffix": "DD",
+        "simplified": false
+      },
+      {
+        "path": ["class_b", "class_c"],
+        "prefix": "",
+        "suffix": "",
+        "simplified": true
+      },
+      {
+        "path": ["class_b", "class_d"],
+        "prefix": "EE",
+        "suffix": "FF",
+        "simplified": false
+      }
+    ]
   }
 ]

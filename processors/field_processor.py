@@ -2,17 +2,17 @@ from models.class_a import Class_A
 
 
 class FieldProcessor:
-    def __init__(self, field_list):
-        self._field_list = field_list
+    def __init__(self, formatter):
+        self._formatter = formatter
         self._root_class = Class_A()
 
     @property
-    def field_list(self):
-        return self._field_list
+    def formatter(self):
+        return self._formatter
 
-    @field_list.setter
-    def field_list(self, value):
-        self._field_list = value
+    @formatter.setter
+    def formatter(self, value):
+        self._formatter = value
 
     @property
     def root_class(self):
@@ -48,12 +48,12 @@ class FieldProcessor:
 
     def process_field_by_index(self, index):
         """Process a field by its index"""
-        if index < 0 or index >= self.field_list.count:
+        if index < 0 or index >= self.formatter.count:
             raise ValueError(
-                f"Field index {index} out of range (0-{self.field_list.count-1})"
+                f"Field index {index} out of range (0-{self.formatter.count-1})"
             )
 
-        field = self.field_list.get_field(index)
+        field = self.formatter.get_field(index)
         result = self.root_class
 
         # Process each step in the path
@@ -64,4 +64,4 @@ class FieldProcessor:
 
     def process_all_fields(self):
         """Process all fields in the list"""
-        return [self.process_field_by_index(i) for i in range(self.field_list.count)]
+        return [self.process_field_by_index(i) for i in range(self.formatter.count)]

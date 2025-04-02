@@ -1,21 +1,37 @@
 # 🔧 Formatter System
 
-A flexible Python system for processing and formatting nested class data with configurable paths and formatting options, including a simplified output feature.
+A flexible Python system for processing and formatting nested class data with configurable paths and formatting options, including multiple formatter configurations.
 
 ## ⚙️ Configuration
 
-The system uses a JSON configuration file (`field_data.json`) to define processing fields:
+### Field Data Configuration
+
+The system uses a JSON configuration file (`field_data.json`) to define formatters and their processing fields:
 
 ```json
-{
-  "path": ["get_result"],
-  "prefix": "Result: ",
-  "suffix": " (from Class A)",
-  "simplified": false
-}
+[
+  {
+    "id": 1,
+    "name": "Formatter One",
+    "field_data": [
+      {
+        "path": ["get_result"],
+        "prefix": "A",
+        "suffix": "B",
+        "simplified": true
+      }
+    ]
+  }
+]
 ```
 
-### Field Data Configuration Properties
+#### Field Data Configuration Properties
+
+| Property     | Type    | Description                         |
+| ------------ | ------- | ----------------------------------- |
+| `id`         | Integer | Unique identifier for the formatter |
+| `name`       | String  | Name of the formatter configuration |
+| `field_data` | Array   | Array of field configurations       |
 
 | Property     | Type    | Description                               |
 | ------------ | ------- | ----------------------------------------- |
@@ -23,6 +39,8 @@ The system uses a JSON configuration file (`field_data.json`) to define processi
 | `prefix`     | String  | Text to prepend to result (optional)      |
 | `suffix`     | String  | Text to append to result (optional)       |
 | `simplified` | Boolean | Flag to enable simplified output          |
+
+### Output Data Configuration
 
 The system uses an output configuration file (`output_config.json`) to define delimiters for formatting results. This includes settings for arrays, objects, and the result separator.
 
@@ -36,12 +54,12 @@ The system uses an output configuration file (`output_config.json`) to define de
     "object_end": "}",
     "object_separator": ",",
     "key_value_separator": ":",
-    "result_separator": "/" // Configurable separator for joining results
+    "result_separator": "/"
   }
 }
 ```
 
-### Output Configuration Properties
+#### Output Configuration Properties
 
 | Property              | Type   | Description                                  |
 | --------------------- | ------ | -------------------------------------------- |
@@ -140,36 +158,34 @@ class Class_E:
 ## 💻 Usage Examples
 
 ```python
-# Basic Usage
-from processors.formatted_processor import FormattedProcessor
-from utils.delimiter_reader import DelimiterReader
-from utils.field_reader import FieldReader
-
+# Read configurations
 delimiter_config = DelimiterReader.read_config("output_config.json")
-field_list = FieldReader.read_fields("field_data.json")
-processor = FormattedProcessor(field_list, delimiter_config)
+formatters = FieldReader.read_formatters("field_data.json")
 
-# # Process each field dynamically
-for i in range(field_list.count):
-  result = processor.process_field_by_index(i)
+# Get formatter by ID
+formatter_id = 2
+formatter = FieldReader.get_formatter_by_id(formatters, formatter_id)
 
-# Batch Processing
-all_results = processor.process_all_fields()
-delimiter_config.result_separator.join(all_results)
+# Or get formatter by name
+formatter_name = "Formatter One"
+formatter = FieldReader.get_formatter_by_name(formatters, formatter_name)
+
+# Process fields
+processor = FormattedProcessor(formatter, delimiter_config)
+result = processor.process_all_fields()
 ```
 
 ## 🔍 Available Fields
 
-| Field    | Path                                   | Description                       |
-| -------- | -------------------------------------- | --------------------------------- |
-| `field1` | `["get_result"]`                       | Direct access to Class_A's result |
-| `field2` | `["get_count"]`                        | Direct access to Class_A's count  |
-| `field3` | `["class_b", "get_number"]`            | Access Class_B's number           |
-| `field4` | `["class_b", "class_c"]`               | Access Class_B's Class_C instance |
-| `field5` | `["class_b", "class_c", "get_number"]` | Access Class_C's number           |
-| `field6` | `["class_b", "class_d"]`               | Access Class_D array              |
-| `field7` | `["class_b", "class_d", "get_array"]`  | Get arrays from Class_D instances |
-| `field8` | `["class_b"]`                          | Access Class_B instance           |
+Each formatter can define its own set of fields with custom paths, prefixes, and suffixes. Common field paths include:
+
+| Path                        | Description                       |
+| --------------------------- | --------------------------------- |
+| `["get_result"]`            | Direct access to Class_A's result |
+| `["get_count"]`             | Direct access to Class_A's count  |
+| `["class_b", "get_number"]` | Access Class_B's number           |
+| `["class_b", "class_c"]`    | Access Class_B's Class_C instance |
+| `["class_b", "class_d"]`    | Access Class_D array              |
 
 ## License
 
