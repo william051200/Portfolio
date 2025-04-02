@@ -1,28 +1,28 @@
 # 🔧 Formatter System
 
-A flexible Python system for processing and formatting nested class data with configurable paths and formatting options.
+A flexible Python system for processing and formatting nested class data with configurable paths and formatting options, including a simplified output feature.
 
 ## ⚙️ Configuration
 
-The system uses a JSON configuration file (`data.json`) to define processing combinations:
+The system uses a JSON configuration file (`field_data.json`) to define processing fields:
 
-```.json
+```json
 {
-  "field1": {
-    "path": ["get_result"],
-    "prefix": "Result: ",
-    "suffix": " (from Class A)"
-  }
+  "path": ["get_result"],
+  "prefix": "Result: ",
+  "suffix": " (from Class A)",
+  "simplified": false
 }
 ```
 
 ### Configuration Properties
 
-| Property | Type   | Description                               |
-| -------- | ------ | ----------------------------------------- |
-| `path`   | Array  | Steps to navigate through class hierarchy |
-| `prefix` | String | Text to prepend to result (optional)      |
-| `suffix` | String | Text to append to result (optional)       |
+| Property     | Type    | Description                               |
+| ------------ | ------- | ----------------------------------------- |
+| `path`       | Array   | Steps to navigate through class hierarchy |
+| `prefix`     | String  | Text to prepend to result (optional)      |
+| `suffix`     | String  | Text to append to result (optional)       |
+| `simplified` | Boolean | Flag to enable simplified output          |
 
 ## 🏗️ Architecture
 
@@ -34,22 +34,17 @@ The system uses a JSON configuration file (`data.json`) to define processing com
 
 ### Processor Types
 
-1. `BaseProcessor`
-
-   - Abstract base class
-   - Defines core functionality
-   - Handles configuration loading
-
-2. `FieldProcessor`
+1. `FieldProcessor`
 
    - Navigates class hierarchy
    - Processes nested structures
    - Handles array operations
 
-3. `FormattedProcessor`
+2. `FormattedProcessor`
    - Adds text formatting
    - Applies prefix/suffix
    - Formats final output
+   - Handles simplified output
 
 ## 📊 Class Structure
 
@@ -72,7 +67,7 @@ class Class_A:
 class Class_B:
     # Properties
     class_c: Class_C        # Instance of Class_C
-    class_d: List[Class_D]  # Array of two Class_D instances
+    class_d: List[Class_D]  # Array of Class_D instances
 
     # Methods
     get_number() → str     # Returns "number"
@@ -117,15 +112,20 @@ class Class_E:
 ```python
 # Basic Usage
 from processors.formatted_processor import FormattedProcessor
+from utils.delimiter_reader import DelimiterReader
+from utils.field_reader import FieldReader
 
-processor = FormattedProcessor("data.json")
-result = processor.process_field("field1")
+delimiter_config = DelimiterReader.read_config("output_config.json")
+field_list = FieldReader.read_fields("field_data.json")
+processor = FormattedProcessor(field_list, delimiter_config)
+
+result = processor.process_field_by_index(0)
 
 # Batch Processing
 all_results = processor.process_all_fields()
 ```
 
-## 🔍 Available Combinations
+## 🔍 Available Fields
 
 | Field    | Path                                   | Description                       |
 | -------- | -------------------------------------- | --------------------------------- |
@@ -137,3 +137,7 @@ all_results = processor.process_all_fields()
 | `field6` | `["class_b", "class_d"]`               | Access Class_D array              |
 | `field7` | `["class_b", "class_d", "get_array"]`  | Get arrays from Class_D instances |
 | `field8` | `["class_b"]`                          | Access Class_B instance           |
+
+## License
+
+This project is licensed under the MIT License.
