@@ -1,0 +1,11 @@
+{
+  "delimiters": {
+    "array_start": "",
+    "array_end": "",
+    "array_separator": "|",
+    "object_start": "{",
+    "object_end": "}",
+    "object_separator": ",",
+    "key_value_separator": ":"
+  }
+}

@@ -54,52 +54,57 @@ The system uses a JSON configuration file (`data.json`) to define processing com
 ## 📊 Class Structure
 
 ### Class_A
+
 ```python
 class Class_A:
     # Properties
     class_b: Class_B        # Instance of Class_B
     get_result: str         # Returns "result"
-    
+
     # Methods
     get_count() → str      # Returns "count"
     get_all() → dict       # Returns all values
 ```
 
 ### Class_B
+
 ```python
 class Class_B:
     # Properties
     class_c: Class_C        # Instance of Class_C
     class_d: List[Class_D]  # Array of two Class_D instances
-    
+
     # Methods
     get_number() → str     # Returns "number"
     get_all() → dict       # Returns all values
 ```
 
 ### Class_C
+
 ```python
 class Class_C:
     # Properties
     class_e: Class_E        # Instance of Class_E
-    
+
     # Methods
     get_end() → str       # Returns "end"
     get_all() → dict      # Returns all values
 ```
 
 ### Class_D
+
 ```python
 class Class_D:
     # Properties
     class_e: Class_E        # Instance of Class_E
-    
+
     # Methods
     get_array() → str     # Returns "array"
     get_all() → dict      # Returns all values
 ```
 
 ### Class_E
+
 ```python
 class Class_E:
     # Methods

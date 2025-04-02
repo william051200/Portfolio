@@ -1,18 +1,18 @@
 {
   "combo1": {
     "path": ["get_result"],
-    "prefix": "Result: ",
-    "suffix": " (from Class A)"
+    "prefix": "AAA",
+    "suffix": "BBB"
   },
   "combo2": {
     "path": ["get_count"],
-    "prefix": "Count: ",
-    "suffix": " items"
+    "prefix": "AAA",
+    "suffix": "BBB"
   },
   "combo3": {
     "path": ["class_b", "get_number"],
-    "prefix": "Number is: ",
-    "suffix": null
+    "prefix": "AAA",
+    "suffix": "BBB"
   },
   "combo4": {
     "path": ["class_b", "class_c"],
@@ -21,22 +21,22 @@
   },
   "combo5": {
     "path": ["class_b", "class_c", "get_number"],
-    "prefix": "Class C number: ",
-    "suffix": " (nested)"
+    "prefix": null,
+    "suffix": null
   },
   "combo6": {
     "path": ["class_b", "class_d"],
-    "prefix": "Arrays: ",
-    "suffix": ""
+    "prefix": "AAA",
+    "suffix": "BBB"
   },
   "combo7": {
     "path": ["class_b", "class_d", "get_array"],
-    "prefix": "[",
-    "suffix": "]"
+    "prefix": "AAA",
+    "suffix": "BBB"
   },
   "combo8": {
     "path": ["class_b"],
-    "prefix": null,
-    "suffix": null
+    "prefix": "AAA",
+    "suffix": "BBB"
   }
 }

@@ -1,6 +1,7 @@
 from models.class_c import Class_C
 from models.class_d import Class_D
 
+
 class Class_B:
     def __init__(self):
         self._class_c = Class_C()

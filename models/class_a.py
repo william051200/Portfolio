@@ -1,5 +1,6 @@
 from models.class_b import Class_B
 
+
 class Class_A:
     def __init__(self):
         self._class_b = Class_B()

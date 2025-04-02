@@ -1,6 +1,8 @@
 from processors.formatted_processor import FormattedProcessor
+from utils.delimiter_reader import DelimiterReader
 
-processor = FormattedProcessor("data.json")
+delimiter_config = DelimiterReader.read_config("output_config.json")
+processor = FormattedProcessor("data.json", delimiter_config)
 print("combo1", processor.process_combo("combo1"))
 print("combo2", processor.process_combo("combo2"))
 print("combo3", processor.process_combo("combo3"))
