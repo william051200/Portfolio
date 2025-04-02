@@ -15,7 +15,7 @@ The system uses a JSON configuration file (`field_data.json`) to define processi
 }
 ```
 
-### Configuration Properties
+### Field Data Configuration Properties
 
 | Property     | Type    | Description                               |
 | ------------ | ------- | ----------------------------------------- |
@@ -23,6 +23,36 @@ The system uses a JSON configuration file (`field_data.json`) to define processi
 | `prefix`     | String  | Text to prepend to result (optional)      |
 | `suffix`     | String  | Text to append to result (optional)       |
 | `simplified` | Boolean | Flag to enable simplified output          |
+
+The system uses an output configuration file (`output_config.json`) to define delimiters for formatting results. This includes settings for arrays, objects, and the result separator.
+
+```json
+{
+  "delimiters": {
+    "array_start": "[",
+    "array_end": "]",
+    "array_separator": ",",
+    "object_start": "{",
+    "object_end": "}",
+    "object_separator": ",",
+    "key_value_separator": ":",
+    "result_separator": "/" // Configurable separator for joining results
+  }
+}
+```
+
+### Output Configuration Properties
+
+| Property              | Type   | Description                                  |
+| --------------------- | ------ | -------------------------------------------- |
+| `array_start`         | String | Delimiter for the start of an array          |
+| `array_end`           | String | Delimiter for the end of an array            |
+| `array_separator`     | String | Separator between array elements             |
+| `object_start`        | String | Delimiter for the start of an object         |
+| `object_end`          | String | Delimiter for the end of an object           |
+| `object_separator`    | String | Separator between object properties          |
+| `key_value_separator` | String | Separator between keys and values            |
+| `result_separator`    | String | Separator used to join results in the output |
 
 ## 🏗️ Architecture
 
@@ -119,10 +149,13 @@ delimiter_config = DelimiterReader.read_config("output_config.json")
 field_list = FieldReader.read_fields("field_data.json")
 processor = FormattedProcessor(field_list, delimiter_config)
 
-result = processor.process_field_by_index(0)
+# # Process each field dynamically
+for i in range(field_list.count):
+  result = processor.process_field_by_index(i)
 
 # Batch Processing
 all_results = processor.process_all_fields()
+delimiter_config.result_separator.join(all_results)
 ```
 
 ## 🔍 Available Fields
