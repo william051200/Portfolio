@@ -1,10 +1,11 @@
 import json
 from models.field_config import FieldConfig
+from models.field_list import FieldList
 
 
-class JsonReader:
+class FieldReader:
     @staticmethod
-    def read_json(file_path):
+    def read_fields(file_path):
         with open(file_path, "r") as file:
             data = json.load(file)
             configs = {}
@@ -13,5 +14,6 @@ class JsonReader:
                     path=field_data["path"],
                     prefix=field_data.get("prefix"),
                     suffix=field_data.get("suffix"),
+                    simplified=field_data.get("simplified"),
                 )
-            return configs
+            return FieldList(configs)
