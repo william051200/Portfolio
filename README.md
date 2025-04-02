@@ -5,18 +5,11 @@ I'll help beautify your README.md with better formatting, sections, and visual e
 
 A flexible Python system for processing and formatting nested class data with configurable paths and formatting options.
 
-## 📖 Table of Contents
-- [Configuration](#configuration)
-- [Architecture](#architecture)
-- [Class Structure](#class-structure)
-- [Usage Examples](#usage-examples)
-- [Available Combinations](#available-combinations)
-
 ## ⚙️ Configuration
 
 The system uses a JSON configuration file (`data.json`) to define processing combinations:
 
-```json
+.json
 {
   "combo1": {
     "path": ["get_result"],
@@ -63,18 +56,58 @@ The system uses a JSON configuration file (`data.json`) to define processing com
 
 ## 📊 Class Structure
 
+### Class_A
+```python
+class Class_A:
+    # Properties
+    class_b: Class_B        # Instance of Class_B
+    get_result: str         # Returns "result"
+    
+    # Methods
+    get_count() → str      # Returns "count"
+    get_all() → dict       # Returns all values
 ```
-Class_A
-├── get_result() → "result"
-├── get_count() → "count"
-└── class_b (Class_B)
-    ├── get_number() → "number"
-    ├── class_c (Class_C)
-    │   ├── get_end() → "end"
-    │   └── class_e (Class_E)
-    └── class_d[] (Array of Class_D)
-        ├── get_array() → "array"
-        └── class_e (Class_E)
+
+### Class_B
+```python
+class Class_B:
+    # Properties
+    class_c: Class_C        # Instance of Class_C
+    class_d: List[Class_D]  # Array of two Class_D instances
+    
+    # Methods
+    get_number() → str     # Returns "number"
+    get_all() → dict       # Returns all values
+```
+
+### Class_C
+```python
+class Class_C:
+    # Properties
+    class_e: Class_E        # Instance of Class_E
+    
+    # Methods
+    get_end() → str       # Returns "end"
+    get_all() → dict      # Returns all values
+```
+
+### Class_D
+```python
+class Class_D:
+    # Properties
+    class_e: Class_E        # Instance of Class_E
+    
+    # Methods
+    get_array() → str     # Returns "array"
+    get_all() → dict      # Returns all values
+```
+
+### Class_E
+```python
+class Class_E:
+    # Methods
+    get_E() → str        # Returns "E"
+    get_all() → dict     # Returns all values
 ```
 
 ## 💻 Usage Examples
