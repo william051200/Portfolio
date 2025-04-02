@@ -5,7 +5,8 @@
     "array_separator": "|",
     "object_start": "{",
     "object_end": "}",
-    "object_separator": ",",
-    "key_value_separator": ":"
+    "object_separator": "/",
+    "key_value_separator": ":",
+    "result_separator": ";"
   }
 }

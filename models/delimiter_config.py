@@ -1,21 +1,23 @@
 class DelimiterConfig:
     def __init__(
         self,
-        array_start="[",
-        array_end="]",
-        array_separator=", ",
-        object_start="{",
-        object_end="}",
-        object_separator=", ",
-        key_value_separator=": ",
+        array_start,
+        array_end,
+        array_separator,
+        object_start,
+        object_end,
+        object_separator,
+        key_value_separator,
+        result_separator,
     ):
-        self._array_start = array_start
-        self._array_end = array_end
-        self._array_separator = array_separator
-        self._object_start = object_start
-        self._object_end = object_end
-        self._object_separator = object_separator
-        self._key_value_separator = key_value_separator
+        self.array_start = array_start
+        self.array_end = array_end
+        self.array_separator = array_separator
+        self.object_start = object_start
+        self.object_end = object_end
+        self.object_separator = object_separator
+        self.key_value_separator = key_value_separator
+        self.result_separator = result_separator
 
     @property
     def array_start(self):

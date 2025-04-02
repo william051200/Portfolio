@@ -16,4 +16,5 @@ class DelimiterReader:
                 object_end=delimiters["object_end"],
                 object_separator=delimiters["object_separator"],
                 key_value_separator=delimiters["key_value_separator"],
+                result_separator=delimiters["result_separator"],
             )

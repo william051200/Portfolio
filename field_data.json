@@ -1,27 +1,21 @@
 [
   {
     "path": ["get_result"],
-    "prefix": "AAA",
-    "suffix": "BBB",
-    "simplified": false
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
   },
   {
     "path": ["get_count"],
-    "prefix": "AAA",
-    "suffix": "BBB",
-    "simplified": false
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
   },
   {
     "path": ["class_b", "get_number"],
-    "prefix": "AAA",
-    "suffix": "BBB",
-    "simplified": false
-  },
-  {
-    "path": ["class_b", "class_c"],
-    "prefix": "",
-    "suffix": "",
-    "simplified": false
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
   },
   {
     "path": ["class_b", "class_c"],
@@ -30,10 +24,28 @@
     "simplified": true
   },
   {
+    "path": ["class_b", "class_c"],
+    "prefix": "",
+    "suffix": "",
+    "simplified": true
+  },
+  {
+    "path": ["class_b", "class_c"],
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
+  },
+  {
+    "path": ["class_b", "class_c"],
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
+  },
+  {
     "path": ["class_b", "class_c", "get_number"],
     "prefix": null,
     "suffix": null,
-    "simplified": false
+    "simplified": true
   },
   {
     "path": ["class_b", "class_c", "get_number"],
@@ -43,20 +55,20 @@
   },
   {
     "path": ["class_b", "class_d"],
-    "prefix": "AAA",
-    "suffix": "BBB",
+    "prefix": "A",
+    "suffix": "B",
     "simplified": true
   },
   {
     "path": ["class_b", "class_d", "get_array"],
-    "prefix": "AAA",
-    "suffix": "BBB",
-    "simplified": false
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
   },
   {
     "path": ["class_b"],
-    "prefix": "AAA",
-    "suffix": "BBB",
-    "simplified": false
+    "prefix": "A",
+    "suffix": "B",
+    "simplified": true
   }
 ]
