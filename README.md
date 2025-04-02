@@ -6,7 +6,7 @@ A flexible Python system for processing and formatting nested class data with co
 
 The system uses a JSON configuration file (`field_data.json`) to define processing fields:
 
-```json
+```.json
 {
   "path": ["get_result"],
   "prefix": "Result: ",
