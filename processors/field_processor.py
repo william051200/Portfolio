@@ -2,7 +2,7 @@ from processors.base_processor import BaseProcessor
 from models.class_a import Class_A
 
 
-class ComboProcessor(BaseProcessor):
+class FieldProcessor(BaseProcessor):
     def __init__(self, config_file):
         super().__init__(config_file)
         self.root_class = Class_A()
@@ -19,11 +19,11 @@ class ComboProcessor(BaseProcessor):
 
         return obj
 
-    def process_combo(self, combo_name):
-        if combo_name not in self.configs:
-            raise ValueError(f"Combo {combo_name} not found")
+    def process_field(self, field_name):
+        if field_name not in self.configs:
+            raise ValueError(f"Field {field_name} not found")
 
-        config = self.configs[combo_name]
+        config = self.configs[field_name]
         result = self.root_class
 
         for step in config.path:

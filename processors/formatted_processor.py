@@ -1,7 +1,7 @@
-from processors.combo_processor import ComboProcessor
+from processors.field_processor import FieldProcessor
 
 
-class FormattedProcessor(ComboProcessor):
+class FormattedProcessor(FieldProcessor):
     def __init__(self, config_file, delimiter_config):
         super().__init__(config_file)
         self.delimiter_config = delimiter_config
@@ -26,9 +26,9 @@ class FormattedProcessor(ComboProcessor):
             return f"{prefix}{formatted_result}{suffix}"
         return f"{prefix}{result}{suffix}"
 
-    def process_combo(self, combo_name):
-        config = self.configs[combo_name]
-        result = super().process_combo(combo_name)
+    def process_field(self, field_name):
+        config = self.configs[field_name]
+        result = super().process_field(field_name)
 
         if config.prefix is None and config.suffix is None:
             return result

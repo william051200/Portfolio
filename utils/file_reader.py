@@ -1,5 +1,5 @@
 import json
-from models.combo_config import ComboConfig
+from models.field_config import FieldConfig
 
 
 class JsonReader:
@@ -7,15 +7,13 @@ class JsonReader:
     def read_json(file_path):
         with open(file_path, "r") as file:
             data = json.load(file)
-
-        configs = {}
-        for combo_name, combo_data in data.items():
-            config = ComboConfig(
-                name=combo_name,
-                path=combo_data["path"],
-                prefix=combo_data.get("prefix"),
-                suffix=combo_data.get("suffix"),
-            )
-            configs[combo_name] = config
-
-        return configs
+            configs = {}
+            for field_name, field_data in data.items():
+                config = FieldConfig(
+                    name=field_name,
+                    path=field_data["path"],
+                    prefix=field_data.get("prefix"),
+                    suffix=field_data.get("suffix"),
+                )
+                configs[field_name] = config
+            return configs

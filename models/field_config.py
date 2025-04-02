@@ -1,4 +1,4 @@
-class ComboConfig:
+class FieldConfig:
     def __init__(self, name, path, prefix=None, suffix=None):
         self._name = name
         self._path = path

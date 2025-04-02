@@ -8,8 +8,8 @@ class BaseProcessor(ABC):
         self.root_class = None
 
     @abstractmethod
-    def process_combo(self, combo_name):
+    def process_field(self, field_name):
         pass
 
-    def process_all_combos(self):
-        return {name: self.process_combo(name) for name in self.configs}
+    def process_all_fields(self):
+        return {name: self.process_field(name) for name in self.configs}

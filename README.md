@@ -8,7 +8,7 @@ The system uses a JSON configuration file (`data.json`) to define processing com
 
 ```.json
 {
-  "combo1": {
+  "field1": {
     "path": ["get_result"],
     "prefix": "Result: ",
     "suffix": " (from Class A)"
@@ -40,7 +40,7 @@ The system uses a JSON configuration file (`data.json`) to define processing com
    - Defines core functionality
    - Handles configuration loading
 
-2. `ComboProcessor`
+2. `FieldProcessor`
 
    - Navigates class hierarchy
    - Processes nested structures
@@ -119,21 +119,21 @@ class Class_E:
 from processors.formatted_processor import FormattedProcessor
 
 processor = FormattedProcessor("data.json")
-result = processor.process_combo("combo1")
+result = processor.process_field("field1")
 
 # Batch Processing
-all_results = processor.process_all_combos()
+all_results = processor.process_all_fields()
 ```
 
 ## 🔍 Available Combinations
 
-| Combo    | Path                                   | Description                       |
+| Field    | Path                                   | Description                       |
 | -------- | -------------------------------------- | --------------------------------- |
-| `combo1` | `["get_result"]`                       | Direct access to Class_A's result |
-| `combo2` | `["get_count"]`                        | Direct access to Class_A's count  |
-| `combo3` | `["class_b", "get_number"]`            | Access Class_B's number           |
-| `combo4` | `["class_b", "class_c"]`               | Access Class_B's Class_C instance |
-| `combo5` | `["class_b", "class_c", "get_number"]` | Access Class_C's number           |
-| `combo6` | `["class_b", "class_d"]`               | Access Class_D array              |
-| `combo7` | `["class_b", "class_d", "get_array"]`  | Get arrays from Class_D instances |
-| `combo8` | `["class_b"]`                          | Access Class_B instance           |
+| `field1` | `["get_result"]`                       | Direct access to Class_A's result |
+| `field2` | `["get_count"]`                        | Direct access to Class_A's count  |
+| `field3` | `["class_b", "get_number"]`            | Access Class_B's number           |
+| `field4` | `["class_b", "class_c"]`               | Access Class_B's Class_C instance |
+| `field5` | `["class_b", "class_c", "get_number"]` | Access Class_C's number           |
+| `field6` | `["class_b", "class_d"]`               | Access Class_D array              |
+| `field7` | `["class_b", "class_d", "get_array"]`  | Get arrays from Class_D instances |
+| `field8` | `["class_b"]`                          | Access Class_B instance           |

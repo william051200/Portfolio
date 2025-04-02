@@ -1,40 +1,40 @@
 {
-  "combo1": {
+  "field1": {
     "path": ["get_result"],
     "prefix": "AAA",
     "suffix": "BBB"
   },
-  "combo2": {
+  "field2": {
     "path": ["get_count"],
     "prefix": "AAA",
     "suffix": "BBB"
   },
-  "combo3": {
+  "field3": {
     "path": ["class_b", "get_number"],
     "prefix": "AAA",
     "suffix": "BBB"
   },
-  "combo4": {
+  "field4": {
     "path": ["class_b", "class_c"],
     "prefix": "",
     "suffix": ""
   },
-  "combo5": {
+  "field5": {
     "path": ["class_b", "class_c", "get_number"],
     "prefix": null,
     "suffix": null
   },
-  "combo6": {
+  "field6": {
     "path": ["class_b", "class_d"],
     "prefix": "AAA",
     "suffix": "BBB"
   },
-  "combo7": {
+  "field7": {
     "path": ["class_b", "class_d", "get_array"],
     "prefix": "AAA",
     "suffix": "BBB"
   },
-  "combo8": {
+  "field8": {
     "path": ["class_b"],
     "prefix": "AAA",
     "suffix": "BBB"
