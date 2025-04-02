@@ -1,4 +1,3 @@
-````markdown:c:\Users\3246786\Codes\formatter\README.md
 # 🔧 Formatter System
 
 A flexible Python system for processing and formatting nested class data with configurable paths and formatting options.
@@ -7,7 +6,7 @@ A flexible Python system for processing and formatting nested class data with co
 
 The system uses a JSON configuration file (`data.json`) to define processing combinations:
 
-.json
+```.json
 {
   "combo1": {
     "path": ["get_result"],
@@ -15,7 +14,7 @@ The system uses a JSON configuration file (`data.json`) to define processing com
     "suffix": " (from Class A)"
   }
 }
-````
+```
 
 ### Configuration Properties
 
