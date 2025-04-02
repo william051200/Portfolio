@@ -1,0 +1,42 @@
+{
+  "combo1": {
+    "path": ["get_result"],
+    "prefix": "Result: ",
+    "suffix": " (from Class A)"
+  },
+  "combo2": {
+    "path": ["get_count"],
+    "prefix": "Count: ",
+    "suffix": " items"
+  },
+  "combo3": {
+    "path": ["class_b", "get_number"],
+    "prefix": "Number is: ",
+    "suffix": null
+  },
+  "combo4": {
+    "path": ["class_b", "class_c"],
+    "prefix": "",
+    "suffix": ""
+  },
+  "combo5": {
+    "path": ["class_b", "class_c", "get_number"],
+    "prefix": "Class C number: ",
+    "suffix": " (nested)"
+  },
+  "combo6": {
+    "path": ["class_b", "class_d"],
+    "prefix": "Arrays: ",
+    "suffix": ""
+  },
+  "combo7": {
+    "path": ["class_b", "class_d", "get_array"],
+    "prefix": "[",
+    "suffix": "]"
+  },
+  "combo8": {
+    "path": ["class_b"],
+    "prefix": null,
+    "suffix": null
+  }
+}
