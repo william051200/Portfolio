@@ -1,6 +1,7 @@
 from typing import List
 from .field_line import FieldLine
 
+
 class FieldData:
     def __init__(self, id: int, name: str, field_lines: List[FieldLine]):
         self._id = id

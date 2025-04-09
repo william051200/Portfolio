@@ -2,13 +2,15 @@ from typing import Any, Dict, List, Union
 from enums.mapping_type import MappingType
 from models.delimiter_config import DelimiterConfig
 
+
 class ValueProcessor:
     _instance = None
     _delimiter_config = None
 
     def __init__(self):
         if ValueProcessor._instance is not None:
-            raise Exception("ValueProcessor is a singleton class. Use get_instance() to access it.")
+            raise Exception(
+                "ValueProcessor is a singleton class. Use get_instance() to access it.")
 
     @classmethod
     def initialize(cls, delimiter_config: DelimiterConfig) -> None:
@@ -21,7 +23,8 @@ class ValueProcessor:
     def get_instance(cls) -> 'ValueProcessor':
         """Get the singleton instance of ValueProcessor."""
         if cls._instance is None:
-            raise Exception("ValueProcessor not initialized. Call initialize() first.")
+            raise Exception(
+                "ValueProcessor not initialized. Call initialize() first.")
         return cls._instance
 
     @property
@@ -48,7 +51,8 @@ class ValueProcessor:
             if mapping_type == MappingType.FUNCTION:
                 child_result[name] = self.process_function_mapping(value)
             elif mapping_type == MappingType.PROPERTY:
-                child_result[name] = self.process_property_mapping(value, child)
+                child_result[name] = self.process_property_mapping(
+                    value, child)
             else:  # CHILD type
                 child_result[name] = value.get_value([])
         return child_result

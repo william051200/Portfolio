@@ -1,4 +1,4 @@
-from typing import List
+from typing import Dict, Any
 from models.field_data import FieldData
 from models.field_line import FieldLine
 from models.field_data_list import FieldDataList
@@ -7,18 +7,15 @@ from .file_reader import FileReader
 
 class FieldProcessor:
     @staticmethod
-    def process_field_data(file_path: str) -> FieldDataList:
-        """Process field data from JSON file into FieldDataList object.
+    def create_field_data_list(json_data: Dict[str, Any]) -> FieldDataList:
+        """Convert JSON data into a FieldDataList instance.
 
         Args:
-            file_path (str): Path to the field data JSON file
+            json_data (Dict[str, Any]): The parsed JSON data containing field data value
 
         Returns:
             FieldDataList: Processed FieldDataList object containing all field data
         """
-        # Read JSON file
-        json_data = FileReader.read_json_file(file_path)
-
         field_data_list = []
 
         # Process each field data entry

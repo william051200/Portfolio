@@ -1,4 +1,5 @@
-from utils.dummy_generator import generate_dummy_classes
+from models.class_a import Class_A
+from utils.dummy_generator import DummyGenerator
 from utils.config_processor import ConfigProcessor
 from utils.field_processor import FieldProcessor
 from utils.file_reader import FileReader
@@ -8,17 +9,20 @@ from models.value_processor import ValueProcessor
 
 def main():
     # Initialize dummy classes
-    class_a = generate_dummy_classes()
+    class_a = DummyGenerator.generate_dummy_classes()
 
-    # Read and process configuration files
-    config_json = FileReader.read_json_file('output_config.json')
-    delimiter_config = ConfigProcessor.create_delimiter_config(config_json)
+    # Read and process delimiter configuration files
+    delimiter_config_json = FileReader.read_json_file('delimiter_config.json')
+    delimiter_config = ConfigProcessor.create_delimiter_config(
+        delimiter_config_json
+    )
 
     # Initialize the ValueProcessor singleton
     ValueProcessor.initialize(delimiter_config)
 
-    # Process field data
-    field_data_list = FieldProcessor.process_field_data('field_data.json')
+    # Read and process field data files
+    field_data_json = FileReader.read_json_file('field_data.json')
+    field_data_list = FieldProcessor.create_field_data_list(field_data_json)
 
     # Get field data with ID 2
     field_data = field_data_list.get_field_data_by_id(2)
@@ -31,6 +35,8 @@ def main():
 
     # Process and format the results
     formatted_results = processor.process_field_lines()
+
+    print(formatted_results)
 
     # Print the formatted results
     print(f"Processing field data: {field_data.name}")

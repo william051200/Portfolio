@@ -1,6 +1,7 @@
 from typing import List, Optional
 from .field_data import FieldData
 
+
 class FieldDataList:
     def __init__(self, field_data_list: List[FieldData]):
         self._field_data_list = field_data_list

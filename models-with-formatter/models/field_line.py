@@ -1,5 +1,6 @@
 from typing import List
 
+
 class FieldLine:
     def __init__(self, path: List[str], prefix: str, suffix: str):
         self._path = path
