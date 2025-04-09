@@ -1,145 +1,91 @@
 [
   {
     "id": 1,
-    "name": "Formatter One",
-    "field_data": [
-      {
-        "path": ["get_result"],
-        "prefix": "A",
-        "suffix": "B",
-        "simplified": true
-      },
+    "name": "Basic Function and Property Access",
+    "field_line": [
       {
         "path": ["get_count"],
-        "prefix": "C",
-        "suffix": "D",
-        "simplified": false
+        "prefix": "F1-",
+        "suffix": ""
       },
       {
-        "path": ["class_b", "get_number"],
-        "prefix": "E",
-        "suffix": "F",
-        "simplified": true
+        "path": ["get_result"],
+        "prefix": "P1-",
+        "suffix": ""
       },
       {
-        "path": ["class_b", "class_c"],
-        "prefix": "",
-        "suffix": "",
-        "simplified": false
+        "path": ["b111", "get_number"],
+        "prefix": "F2-",
+        "suffix": ""
       },
       {
-        "path": ["class_b", "class_d"],
-        "prefix": "G",
-        "suffix": "H",
-        "simplified": true
+        "path": ["b111", "c111"],
+        "prefix": "P2-",
+        "suffix": ""
       }
     ]
   },
   {
     "id": 2,
-    "name": "Formatter Two",
-    "field_data": [
+    "name": "Class Result Access",
+    "field_line": [
       {
-        "path": ["get_result"],
-        "prefix": "I",
-        "suffix": "J",
-        "simplified": false
+        "path": ["b111"],
+        "prefix": "C1-",
+        "suffix": ""
       },
       {
-        "path": ["get_count"],
-        "prefix": "K",
-        "suffix": "L",
-        "simplified": true
-      },
-      {
-        "path": ["class_b", "get_number"],
-        "prefix": "M",
-        "suffix": "N",
-        "simplified": false
-      },
-      {
-        "path": ["class_b", "class_c"],
-        "prefix": "",
-        "suffix": "",
-        "simplified": true
-      },
-      {
-        "path": ["class_b", "class_d"],
-        "prefix": "O",
-        "suffix": "P",
-        "simplified": false
+        "path": ["b111"],
+        "prefix": "C2-",
+        "suffix": ""
       }
     ]
   },
   {
     "id": 3,
-    "name": "Formatter Three",
-    "field_data": [
+    "name": "ID-based Access",
+    "field_line": [
       {
-        "path": ["get_result"],
-        "prefix": "Q",
-        "suffix": "R",
-        "simplified": true
+        "path": ["b111", "get_number"],
+        "prefix": "ID1-",
+        "suffix": ""
       },
       {
-        "path": ["get_count"],
-        "prefix": "S",
-        "suffix": "T",
-        "simplified": false
-      },
-      {
-        "path": ["class_b", "get_number"],
-        "prefix": "U",
-        "suffix": "V",
-        "simplified": true
-      },
-      {
-        "path": ["class_b", "class_c"],
-        "prefix": "",
-        "suffix": "",
-        "simplified": false
-      },
-      {
-        "path": ["class_b", "class_d"],
-        "prefix": "W",
-        "suffix": "X",
-        "simplified": true
+        "path": ["b111", "c111"],
+        "prefix": "ID2-",
+        "suffix": ""
       }
     ]
   },
   {
     "id": 4,
-    "name": "Formatter Four",
-    "field_data": [
+    "name": "Array Access",
+    "field_line": [
       {
-        "path": ["get_result"],
-        "prefix": "Y",
-        "suffix": "Z",
-        "simplified": false
+        "path": ["b111", "d111"],
+        "prefix": "A2-",
+        "suffix": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mixed Access",
+    "field_line": [
+      {
+        "path": ["b111", "d111", "get_array"],
+        "prefix": "M1-",
+        "suffix": ""
       },
       {
-        "path": ["get_count"],
-        "prefix": "AA",
-        "suffix": "BB",
-        "simplified": true
+        "path": ["b111", "d111", "e222"],
+        "prefix": "M2-",
+        "suffix": ""
       },
       {
-        "path": ["class_b", "get_number"],
-        "prefix": "CC",
-        "suffix": "DD",
-        "simplified": false
-      },
-      {
-        "path": ["class_b", "class_c"],
-        "prefix": "",
-        "suffix": "",
-        "simplified": true
-      },
-      {
-        "path": ["class_b", "class_d"],
-        "prefix": "EE",
-        "suffix": "FF",
-        "simplified": false
+        "path": ["b111", "c111", "get_end"],
+        "prefix": "M3-",
+        "suffix": ""
       }
     ]
   }
